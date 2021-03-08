@@ -9,7 +9,7 @@ public:
   RandomNumberGenerator() : engine(seed_gen()) {}
 
   T range(T l, T r) {
-    std::uniform_int_distribution<> rng(l, r);
+    std::uniform_int_distribution<T> rng(l, r);
     return rng(engine);
   }
 };
