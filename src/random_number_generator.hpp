@@ -8,6 +8,11 @@ class RandomNumberGenerator {
 public:
   RandomNumberGenerator() : engine(seed_gen()) {}
 
+  T operator() (T l, T r) {
+    std::uniform_int_distribution<T> rng(l, r);
+    return rng(engine);
+  }
+    
   T range(T l, T r) {
     std::uniform_int_distribution<T> rng(l, r);
     return rng(engine);
